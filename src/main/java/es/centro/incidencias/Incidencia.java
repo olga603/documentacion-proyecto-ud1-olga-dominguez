@@ -75,7 +75,7 @@ public final class Incidencia {
     }
 
     /**
-     * Obtiene la coincidencia del texto pasado como parámetro con la cadena de texto del id o del título
+     * Comprueba si hay coincidencias de tecto pasado como parámetro con la cadena de texto del id o del título
      * @param texto Una cadena de texto que podría formar parte o no del id o el título
      * @return Un booleano con valor true si coincide y false si no contiene esa secuencia de caracteres
      */
