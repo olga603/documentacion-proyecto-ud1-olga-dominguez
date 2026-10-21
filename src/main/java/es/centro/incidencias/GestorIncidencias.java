@@ -79,6 +79,7 @@ public final class GestorIncidencias {
      * la cual lanza una excepción en caso de no encontrar la incidencia en lugar de retornar nulo.
      * @param id El identificador único de la incidencia
      * @return La incidencia no encontrada, o {@code null} si no se encuentra.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.0.0", forRemoval = false)
     public Incidencia obtenerIncidencia(String id) {
