@@ -60,7 +60,7 @@ mvn javadoc:javadoc
 .\mvnw.cmd javadoc:javadoc
 ```
 
-Una vez generado, el sitio web estático resultante se almacenará en la carpeta `docs/` o `target/site/apidocs/`.
+Una vez generado, el sitio web estático resultante se almacenará en la carpeta `docs/`.
 
 ---
 
@@ -68,7 +68,7 @@ Una vez generado, el sitio web estático resultante se almacenará en la carpeta
 
 La documentación técnica Javadoc generada está publicada de forma accesible a través de GitHub Pages:
 
-**[Consultar Documentación Javadoc en GitHub Pages](https://tu-usuario.github.io/)**
+**[Consultar Documentación Javadoc en GitHub Pages](https://olga603.github.io/documentacion-proyecto-ud1-olga-dominguez/)**
 
 ---
 
