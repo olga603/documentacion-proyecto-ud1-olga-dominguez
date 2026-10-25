@@ -5,19 +5,26 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Clase principal que contiene la lógica de la aplicación
+ * Clase principal que contiene la lógica de la aplicación y gestiona
+ * la interfaz de usuario tanto por línea de comandos como por menú interactivo.
+ *
+ * @author Tu Nombre / Centro
+ * @version 1.0
  */
 public final class App {
     /**
-     * Constructor vacío
+     * Constructor privado por defecto para evitar la instanciación
+     * de esta clase de utilidad/principal.
      */
     private App() {
     }
 
     /**
-     * Metodo main ejecutable que instancia un gestor con contenido por defecto.
-     * Muestra un menú para que el usuario pueda realizar acciones de gestión.
-     * @param args Array que recibe argumentos desde la línea de comandos al ejecutar el programa
+     * Método main ejecutable que instancia un gestor con contenido por defecto.
+     * Muestra un menú interactivo o procesa argumentos por línea de comandos
+     * para que el usuario pueda realizar acciones de gestión.
+     *
+     * @param args Array que recibe argumentos desde la línea de comandos al ejecutar el programa.
      */
     public static void main(String[] args) {
         GestorIncidencias gestor = new GestorIncidencias();
@@ -46,8 +53,10 @@ public final class App {
     }
 
     /**
-     * Lee las distintas entradas del usuario y llama al metodo correspondiente a la acción que indique
-     * @param gestor Gestor que contiene la lista de incidencia sobre la que se realizarán operaciones
+     * Lee las distintas entradas del usuario a través de la consola y llama
+     * al método correspondiente a la acción indicada en el menú.
+     *
+     * @param gestor Gestor que contiene la lista de incidencias sobre la que se realizarán las operaciones.
      */
     private static void ejecutarMenuInteractivo(GestorIncidencias gestor) {
         Scanner entrada = new Scanner(System.in);
@@ -84,7 +93,8 @@ public final class App {
     }
 
     /**
-     * Imprime por consola las opciones del menú y que número debe presionar el usuario para ejecuatar cada una de ellas
+     * Imprime por consola las opciones disponibles del menú principal
+     * y el número que debe presionar el usuario para ejecutar cada una de ellas.
      */
     private static void mostrarMenu() {
         System.out.println("----------------------------------------");
@@ -97,11 +107,12 @@ public final class App {
     }
 
     /**
-     * Lee un texto para buscar alguna incidencia que coincida con la cadena
-     * introducida ya sea en id o en título. Si la entrada está vacía o solo contiene espacios
-     * muestra "Debes ontroducir algún texto
-     * @param entrada Instancia de Scanner necesaria para pedir datos al usuario
-     * @param gestor GestorIncodencias sobre el que se realizará la búsqueda
+     * Lee un texto introducido por el usuario para buscar alguna incidencia
+     * que coincida con la cadena, ya sea en su identificador o en su título.
+     * Si la entrada está vacía o solo contiene espacios, muestra un mensaje de aviso.
+     *
+     * @param entrada Instancia de {@link Scanner} necesaria para pedir datos al usuario.
+     * @param gestor  Instancia de {@link GestorIncidencias} sobre la que se realizará la búsqueda.
      */
     private static void buscarDesdeMenu(Scanner entrada, GestorIncidencias gestor) {
         System.out.print("Texto que deseas buscar: ");
@@ -116,10 +127,12 @@ public final class App {
     }
 
     /**
-     * Lee un identificador e improme la información detallada de la incidencia correspondiente.
-     * Si la entrada está vacía o solo contiene espacios se informará con un mensaje
-     * @param entrada Instancia de Scanner necesaria para pedir datos al usuario
-     * @param gestor {@code GestorIncidencias} en que se se buscará el id
+     * Lee un identificador introducido por el usuario e imprime la información
+     * detallada de la incidencia correspondiente.
+     * Si la entrada está vacía o solo contiene espacios, se notifica con un mensaje.
+     *
+     * @param entrada Instancia de {@link Scanner} necesaria para pedir datos al usuario.
+     * @param gestor  Instancia de {@link GestorIncidencias} en la que se buscará el identificador.
      */
     private static void mostrarDetalleDesdeMenu(Scanner entrada, GestorIncidencias gestor) {
         System.out.print("Identificador de la incidencia: ");
@@ -134,9 +147,11 @@ public final class App {
     }
 
     /**
-     * Imprime la incidencia del gestor que coincida con el texto que haya escrito el usuario
-     * @param args Conjunto de argumentos tecleados en linea de comandos por el usuario
-     * @param gestor Gestor que contiene las incidencias en las que se buscan coincidencias
+     * Procesa los argumentos de la línea de comandos para imprimir las incidencias
+     * del gestor que coincidan con el texto indicado.
+     *
+     * @param args   Conjunto de argumentos tecleados en la línea de comandos por el usuario.
+     * @param gestor Instancia de {@link GestorIncidencias} que contiene las incidencias a buscar.
      */
     private static void buscar(String[] args, GestorIncidencias gestor) {
         if (args.length < 2) {
@@ -149,10 +164,11 @@ public final class App {
     }
 
     /**
-     * Extrae la última entrada válida de linea de comandos que contiene un id, con esa informaicón
-     * llama a otro metodo para que muestre el detalle con la incidencia corespondiente
-     * @param args Conjunto de argumnetos leídos de línea de comandos
-     * @param gestor Gestor que contiene las incidencias
+     * Extrae el identificador recibido por argumentos de la línea de comandos
+     * y llama al método correspondiente para mostrar el detalle de la incidencia.
+     *
+     * @param args   Conjunto de argumentos leídos de la línea de comandos.
+     * @param gestor Instancia de {@link GestorIncidencias} que contiene las incidencias.
      */
     private static void mostrarDetalle(String[] args, GestorIncidencias gestor) {
         if (args.length < 2) {
@@ -164,9 +180,11 @@ public final class App {
     }
 
     /**
-     * Muestra por pantalla los datos de la incidencia que corresponda con el id que recibe por paámetro
-     * @param id Identificador de la incidencia que se quiere imprimir
-     * @param gestor Gestor que contiene la lista de incidencias
+     * Muestra por pantalla los datos detallados de la incidencia
+     * que corresponda con el identificador recibido por parámetro.
+     *
+     * @param id     Identificador de la incidencia que se quiere imprimir.
+     * @param gestor Instancia de {@link GestorIncidencias} que contiene la lista de incidencias.
      */
 
     private static void mostrarDetalle(String id, GestorIncidencias gestor) {
@@ -178,9 +196,10 @@ public final class App {
     }
 
     /**
-     * Muestra todas las incidencias de la lista, si está vacío, muestra un mensaje de que no
-     * se han encontrado incidencias
-     * @param incidencias Lista de incidencias que se van a imprimir
+     * Muestra todas las incidencias de la lista proporcionada.
+     * Si la lista está vacía, muestra un mensaje indicando que no se han encontrado incidencias.
+     *
+     * @param incidencias Lista de incidencias que se van a imprimir.
      */
     private static void mostrar(List<Incidencia> incidencias) {
         if (incidencias.isEmpty()) {
@@ -191,7 +210,8 @@ public final class App {
     }
 
     /**
-     * Muestra por pantalla el listado de comandos y su acción correspondiente
+     * Muestra por pantalla el listado de comandos disponibles por consola
+     * y su descripción o acción correspondiente.
      */
     private static void mostrarAyuda() {
         System.out.println("Gestor de incidencias");
